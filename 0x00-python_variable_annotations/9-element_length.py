@@ -2,9 +2,9 @@
 """A smple annotated function"""
 
 
-from typing import List, Tuple, Union
+from typing import List, Iterable, Tuple, Sequence
 
 
-def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
-    """Sums up a list of floats"""
-    return (k, v*v)
+def element_length(lst: Iterable[Sequence]) -> \
+        List[Tuple[Sequence, int]]:
+    return [(i, len(i)) for i in lst]
