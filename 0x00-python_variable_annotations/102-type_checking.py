@@ -5,6 +5,9 @@ from typing import List, Tuple
 
 
 def zoom_array(lst: Tuple, factor: int = 2) -> List:
+    """ Returns a list of list of numbers Tuple up
+        to range <factor>
+    """
     zoomed_in: List = [
         item for item in lst
         for i in range(factor)
