@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Duck-typing annotations"""
+"""More involved type annotations"""
 
 
 from typing import Any, Mapping, Mapping, TypeVar, Union
