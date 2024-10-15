@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Executing multiple coroutines at the same time with async"""
+"""Executing multiple coroutines at the same time wtoith async"""
 
-from typing import Callable, Coroutine
+from typing import Callable, Coroutine, List
 wait_random: Callable[[int], Coroutine[None, None, float]] = \
     __import__("0-basic_async_syntax").wait_random
 
 
-async def wait_n(n: int, max_delay: int) -> list[float]:
+async def wait_n(n: int, max_delay: int) -> List:
     """Creates as many coroutines as defined by <max_delay>
 
     Parameters:
@@ -21,4 +21,5 @@ async def wait_n(n: int, max_delay: int) -> list[float]:
 
     for _ in range(n):
         delay: float = await wait_random(max_delay)
+        result.append(delay)
     return sorted(result)
