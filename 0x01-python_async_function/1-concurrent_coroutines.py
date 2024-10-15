@@ -2,8 +2,7 @@
 """Executing multiple coroutines at the same time wtoith async"""
 
 from typing import Callable, Coroutine, List
-wait_random: Callable[[int], Coroutine[None, None, float]] = \
-    __import__("0-basic_async_syntax").wait_random
+wait_random = __import__("0-basic_async_syntax").wait_random
 
 
 async def wait_n(n: int, max_delay: int) -> List:
