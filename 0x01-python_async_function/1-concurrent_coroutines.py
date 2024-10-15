@@ -6,19 +6,6 @@ wait_random: Callable[[int], Coroutine[None, None, float]] = \
     __import__("0-basic_async_syntax").wait_random
 
 
-def insert_at(lst: list[float], val: float) -> int:
-    """returns the index in lst to insert val"""
-    length: int = len(lst)
-    i: int = length - 1
-    if not length:
-        return 0
-    while i >= 0:
-        if lst[i] <= val:
-            break
-        i -= 1
-    return i + 1
-
-
 async def wait_n(n: int, max_delay: int) -> list[float]:
     """Creates as many coroutines as defined by <max_delay>
 
@@ -34,5 +21,4 @@ async def wait_n(n: int, max_delay: int) -> list[float]:
 
     for _ in range(n):
         delay: float = await wait_random(max_delay)
-        result.insert(insert_at(result, delay), delay)
-    return result
+    return sorted(result)
