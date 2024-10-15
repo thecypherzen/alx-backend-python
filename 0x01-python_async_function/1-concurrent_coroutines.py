@@ -17,7 +17,7 @@ async def wait_n(n: int, max_delay: int) -> List:
       list of all return values of <max_delay> sorted in ascending
       order without using sort
     """
-    result: list[float] = []
+    result: List[float] = []
 
     for _ in range(n):
         delay: float = await wait_random(max_delay)
