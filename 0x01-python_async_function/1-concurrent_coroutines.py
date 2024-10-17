@@ -6,7 +6,7 @@ from typing import Callable, Coroutine, List
 wait_random = __import__("0-basic_async_syntax").wait_random
 
 
-async def wait_n(n: int, max_delay: int) -> List:
+async def wait_n(n: int, max_delay: int) -> List[float]:
     """Creates as many coroutines as defined by <max_delay>
 
     Parameters:
